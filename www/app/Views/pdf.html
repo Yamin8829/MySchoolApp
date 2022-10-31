@@ -1,0 +1,723 @@
+ 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halah</title>
+</head>
+<style>
+  *,
+*::before,
+*::after {
+  box-sizing: border-box;
+}  
+html {
+  font-family: sans-serif;
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+ 
+body {
+  margin: 0;
+  font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";  
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
+  background-color: rgb(225, 225, 225);
+  /* background: rgb(2,0,36); */
+  /* background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);  */
+}
+.col-10, .col-2{
+  position: relative;
+  width: 100%;
+  padding-right: 7.5px;
+  padding-left: 7.5px;
+}
+.content{
+  /* display: flex; */
+  /* float: left; */ 
+}
+.box{ 
+  /* display: inline-block; */
+}
+.col-2{
+  /* -ms-flex: 0 0 16.666667%;
+  flex: 0 0 16.666667%;
+  max-width: 16.666667%; */  
+  /* background: rgb(216, 59, 255);  */
+}
+ 
+.col-10 {
+  background: rgb(35, 204, 255);
+  /* -ms-flex: 0 0 83.333333%;
+  flex: 0 0 83.333333%;
+  max-width: 83.333333%;  */ 
+}
+
+.card1 {
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-width: 0;
+  width: 100px;
+  height: 104px;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 0 solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+  text-align: center;
+  margin-left: 10px;
+  margin-top: 20px;
+}
+.card-header1 {
+  padding: .3rem;
+  margin-bottom: 0;
+  color: white;
+  font-weight: bold;
+  background-color: rgba(0, 0, 0, 1);
+  border-bottom: 0 solid rgba(0, 0, 0, 0.125);
+}
+.card-body1 {
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  min-height: 1px;
+  font-weight: bold;
+  font-size: 2.5em; 
+}
+
+
+.card {
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-width: 0;  
+  width: 170px;
+  word-wrap: break-word;
+  /* background-color: #fff; */
+  background-clip: border-box;
+  border: 0 solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+  text-align: center;
+  margin-left: 10px;
+  margin-top: 30px;
+}
+ 
+.card-body { 
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto; 
+  /* background-color: #fff;  */
+  font-size: .8em; 
+  padding-top: 4rem;
+  padding-bottom: .3rem;
+}
+.bg-img{
+  position: relative; 
+  height: 150px; 
+  width: 120px;
+  background: rgba(0, 0, 0, .5); 
+  overflow: hidden;
+  -ms-flex-negative: 0;
+  flex-shrink: 0; 
+  margin: auto;
+  vertical-align: middle;
+  border-style: none;
+  background-color: #5d5d5d;
+} 
+.card-img{ 
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+} 
+.card-induk{
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 0 solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+}
+.body-induk{
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  min-height: 1px;
+  padding: 1.25rem;
+}
+.text-uppercase{
+text-transform: uppercase !important;
+font-weight: bolder;
+}
+.list-unstyled {
+  padding-left: 1.3rem;
+  list-style: none;
+}
+.table {
+  width: 100%;
+  margin-bottom: 1rem;
+  color: #212529;
+  background-color: transparent;
+}
+
+.table th,
+.table td {
+  padding: 0.75rem;
+  vertical-align: top;
+  border-top: 1px solid #dee2e6;
+}
+
+.table thead th {
+  vertical-align: bottom;
+  border-bottom: 2px solid #dee2e6;
+  text-align: center;
+  
+}
+.table-bordered {
+  border: 1px solid #787878;
+}
+
+.table-bordered th,
+.table-bordered td {
+  border: 1px solid #b8b8b8;
+}
+
+.table-bordered thead th,
+.table-bordered thead td {
+  border-bottom-width: 2px;
+}
+.tai{ 
+  display: inline-block;
+}
+</style>
+<body>
+   
+
+  <section class="content">
+    <div class="tai">
+    <div class="col-2"> 
+      <div class="card1">
+        <div class="card-header1">
+          <span>No. Urut</span>
+        </div>
+        <div class="card-body1">
+          <span>12</span>
+        </div>
+      </div>
+      <div class="card">
+        <div class="bg-img">
+          <span><img class="card-img" src="/www/public/assets/images/profile/sample.png" alt="" srcset=""></span>
+        </div>
+        <div class="card-body">
+          <span >(Muhammad Ramadhan Hilal Gumilang)</span>
+        </div>
+      </div>
+      <div class="card">
+        <div class="bg-img">
+          <span><img class="card-img" src="/www/public/assets/images/profile/sample.png" alt="" srcset=""></span>
+        </div>
+        <div class="card-body">
+          <span >(Muhammad Ramadhan Hilal Gumilang)</span>
+        </div>
+      </div>
+      <div class="card">
+        <div class="bg-img">
+          <span><img class="card-img" src="/www/public/assets/images/profile/sample.png" alt="" srcset=""></span>
+        </div>
+        <div class="card-body">
+          <span >(Muhammad Ramadhan Hilal Gumilang)</span>
+        </div>
+      </div>
+      <div class="card">
+        <div class="bg-img">
+          <span><img class="card-img" src="/www/public/assets/images/profile/sample.png" alt="" srcset=""></span>
+        </div>
+        <div class="card-body">
+          <span >(Muhammad Ramadhan Hilal Gumilang)</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="tai" style="vertical-align:top;">
+    <div class="col-10">
+      <div class="card-induk">
+        <div class="body-induk">
+          <h2 class=" text-uppercase"> LEMBAR BUKU INDUK PESERTA DIDIK SMP </h2>
+          <ul class="ml-2 list-unstyled">
+
+            <li> Nomor Induk : Muhammad Ramadhan Hilal Gumilang</li>
+            <li> NISN : Muhammad Ramadhan Hilal Gumilang</li> 
+            </ul>
+
+          <p class=" text-uppercase">B. Keterangan tempat tinggal Siswa </p>
+          <ul class="ml-2 list-unstyled">
+            <li>1. Nama lengkap  : </li>
+            <li>2. Nama Panggilan  : </li>
+            <li>
+          <?php if ($siswa['gender_siswa'] == 'Laki-laki'): ?> 3. Jenis Kelamin : Laki-Laki ( L )
+          <?php endif;?> </li>
+          
+          <?php if ($siswa['gender_siswa'] == 'Perempuan'): ?> 3. Jenis Kelamin : Perempuan ( P ) </li>
+          <?php endif;?>
+          <li>4. Tempat dan tanggal lahir : <?=$siswa['tmp_lahir_siswa'];?>, <?=date('d F Y', strtotime($siswa['tgl_lahir_siswa']));
+          ?></li>
+          <li>5. Agama : <?=$siswa['agama_siswa'];?></li>
+          <li>6. Kewarganegaraan : <?=$siswa['negara_siswa'];?></li>
+          
+          <li>7. Anak ke : <?=$siswa['ank_ke'];?></li>
+          <li>8. Jumlah saudara : Kandung <?=$siswa['jml_sdra_kndung'];?> orang, Tiri <?=$siswa['jml_sdra_tiri'];?> orang, Angkat <?=$siswa['jml_sdra_angkat'];?> orang</li>
+          
+          <li>9. Anak yatim/piatu/yatim piatu : <?=$siswa['status_ortu'];?></li>
+          <li>10. Bahasa sehari-hari : <?=$siswa['bhs_daily'];?></li>
+          </ul>
+
+          
+<p class="fs-6 fw-bold text-uppercase">B. Keterangan tempat tinggal Siswa </p>
+<ul class="ml-2 list-unstyled">
+<li>11. Alamat Peserta Didik : <?=$siswa['alamat_siswa'];?></li>
+  <li>12. Selama bersekolah tinggal dengan : <?=$siswa['tinggal_dgn'];?></li>
+  <li>13. Jarak dari tempat tinggal ke sekolah : <?=$siswa['jrak_kesekolah'];?></li>
+  <li>14. Ke sekolah dengan kendaraan / jalan kaki : <?=$siswa['kesekolah_dgn'];?></li>
+
+</ul>
+
+<p class="fs-6 fw-bold text-uppercase">C. Keterangan jasmani dan kesehatan siswa </p>
+<ul class="ml-2 list-unstyled">
+
+  <li>15. Berat badan tahun ini : <?=$siswa['berat_badan_1'];?> kg. </li>
+  <li>16. Tinggi badan tahun ini : <?=$siswa['tinggi_badan_1'];?> cm. </li>
+  <li>17. Golongan darah : <?=$siswa['gol_darah'];?></li>
+  <li>18. Penyakit yang pernah diderita (sakit berat yang memerlukan perawatan khusus) :  
+  <div><table class="table-bordered table table-hover">
+            <thead>
+            <tr>
+                    <th>No.</th>
+                    <th>Jenis Penyakit</th> 
+                    <th>Kelas</th>
+                    <th>Tahun</th>
+                    <th>Lama Sakit</th>
+                    <th>Keterangan</th>
+            </tr>
+            </thead>
+            <tbody>
+<tr>
+  <td>1.</td>
+  <td><?=$siswa['pnykit_berat_1'];?></td>
+  <td><?=$siswa['trjngkit_saat_kls_1'];?></td>
+  <td><?=$siswa['trjngkit_di_thn_1'];?></td>
+  <td><?=$siswa['trjngkit_selama_1'];?></td>
+  <td><?=$siswa['ketrngan_1'];?></td> 
+</tr>
+<tr>
+  <td>2.</td>
+  <td><?=$siswa['pnykit_berat_2'];?></td>
+  <td><?=$siswa['trjngkit_saat_kls_2'];?></td>
+  <td><?=$siswa['trjngkit_di_thn_2'];?></td>
+  <td><?=$siswa['trjngkit_selama_2'];?></td>
+  <td><?=$siswa['ketrngan_2'];?></td> 
+</tr>
+<tr>
+  <td>3.</td>
+  <td><?=$siswa['pnykit_berat_3'];?></td>
+  <td><?=$siswa['trjngkit_saat_kls_3'];?></td>
+  <td><?=$siswa['trjngkit_di_thn_3'];?></td>
+  <td><?=$siswa['trjngkit_selama_3'];?></td>
+  <td><?=$siswa['ketrngan_3'];?></td> 
+</tr>
+            </tbody>
+                </table></div>
+</li> 
+  <li>19. Kelainan jasmaniah / lainnya : <?=$siswa['kelainan_lainnya'];?></li>
+  </ul> 
+  
+<p class="fs-6 fw-bold text-uppercase">D. Keterangan tentang pendidikan sebelumnya </p>
+<ul class="ml-2 list-unstyled">
+<li>20. Diterima di sekolah ini sebagai siswa baru tanggal : <?=$siswa['sswa_bru_ditgl_1'];?> 
+<ul class="ml-4 list-unstyled">
+<li>Asal Sekolah Dasar : <?=$siswa['asl_sklah_1'];?> </li>
+  <li>Alamat : <?=$siswa['alamat_sklah_asl_1'];?></li>
+  <li>Tanggal dan No. Ijazah : <?=$siswa['tgl_nmr_ijazah_1'];?></li>
+</ul>
+</li>
+<li>21. Diterima di sekolah ini sebagai siswa pindahan pada tanggal : <?=$siswa['sswa_pndhan_ditgl_1'];?>
+<ul class="ml-4 list-unstyled"> 
+  <li>Di kelas : <?=$siswa['pndh_di_kls_1'];?></li>
+  <li>Dari SMP : <?=$siswa['nmskolah_pndahan_1'];?></li>
+  <li>Alamat : <?=$siswa['alamat_sklh_pndahn_1'];?></li>
+  <li>Asal SD / No. Ijazah : <?=$siswa['asl_sklah_before_nmrijazahnya_1'];?></li>
+  <li>Alamat  : <?=$siswa['alamat_aslsekolah_before_1'];?></li>
+  <li>Alasan pindah ke sekolah ini : <?=$siswa['alasan_pindah_kesini_1'];?></li>
+</ul>
+</li>
+</ul> 
+
+<p class="fs-6 fw-bold text-uppercase">E. Keterangan tentang orang tua kandung </p>
+<ul class="ml-2 list-unstyled">
+  <li>
+  <div><table class="table-bordered table table-hover">
+            <thead>
+            <tr>
+                    <th>22. Data orang tua kandung</th>
+                    <th>Ayah</th> 
+                    <th>Ibu</th> 
+                   
+            </tr>
+            </thead>
+            <tbody>
+<tr>
+  <td>Nama</td>
+  <td><?=$siswa['ayah'];?></td>  
+  <td><?=$siswa['ibu'];?></td>  
+</tr>
+<tr>
+  
+  <td>Tempat & tanggal lahir</td> 
+  <td><?=$siswa['ttl_ayah'];?></td>
+  <td><?=$siswa['ttl_ibu'];?></td>
+  
+</tr>
+<tr>
+ <td>Kewarganegaraan</td> 
+ <td><?=$siswa['negara_ayah'];?></td>
+ <td><?=$siswa['negara_ibu'];?></td>
+  
+</tr>
+<tr>
+<td>Pendidikan tertinggi</td> 
+<td><?=$siswa['pnddkan_akhir_ayah'];?></td>
+<td><?=$siswa['pnddkan_akhir_ibu'];?></td>
+ 
+</tr>
+<tr>
+<td>Pekerjaan</td>
+<td><?=$siswa['job_ayah'];?></td>
+<td><?=$siswa['job_ibu'];?></td>
+ 
+</tr>
+<tr>
+<td>Penghasilan rata-rata /bulan/tahun</td> 
+<td><?=$siswa['gaji_ayah'];?></td>
+<td><?=$siswa['gaji_ibu'];?></td>
+ 
+</tr>
+<tr>
+<td>Alamat</td>  
+<td><?=$siswa['almt_ayah'];?></td>
+<td><?=$siswa['almt_ibu'];?></td>
+</tr>
+
+            </tbody>
+                </table></div>
+  </li>
+</ul>
+
+<p class="fs-6 fw-bold text-uppercase">F. Keterangan tentang wali</p>
+<ul class="ml-2 list-unstyled">
+<li>
+  <div><table class="table-bordered table table-hover">
+            <thead>
+            <tr>
+                    <th>23. Data Wali</th>
+                    <th>Laki-laki</th> 
+                    <th>Perempuan</th> 
+                   
+            </tr>
+            </thead>
+            <tbody>
+<tr>
+  <td>Nama</td>
+  <td><?=$siswa['wali'];?></td>  
+  <td><?=$siswa['ibu'];?></td>  
+</tr>
+<tr>
+  
+  <td>Tempat & tanggal lahir</td> 
+  <td><?=$siswa['ttl_wali'];?></td>
+  <td><?=$siswa['ttl_ibu'];?></td>
+  
+</tr>
+<tr>
+ <td>Kewarganegaraan</td> 
+ <td><?=$siswa['negara_wali'];?></td>
+ <td><?=$siswa['negara_ibu'];?></td>
+  
+</tr>
+<tr>
+<td>Pendidikan tertinggi</td> 
+<td><?=$siswa['pnddkn_akhir_wali'];?></td>
+<td><?=$siswa['pnddkan_akhir_ibu'];?></td>
+ 
+</tr>
+<tr>
+<td>Pekerjaan</td>
+<td><?=$siswa['job_wali'];?></td>
+<td><?=$siswa['job_ibu'];?></td>
+ 
+</tr>
+<tr>
+<td>Penghasilan rata-rata /bulan/tahun</td> 
+<td><?=$siswa['gaji_wali'];?></td>
+<td><?=$siswa['gaji_ibu'];?></td>
+ 
+</tr>
+<tr>
+<td>Alamat</td>  
+<td><?=$siswa['almt_wali'];?></td>
+<td><?=$siswa['almt_ibu'];?></td>
+</tr>
+<tr>
+<td>Hubungan dengan peserta didik</td>  
+<td><?=$siswa['status_dgn_sswa'];?></td>
+<td><?=$siswa['almt_ibu'];?></td>
+</tr>
+
+            </tbody>
+                </table></div>
+  </li>
+</ul>
+
+<p class="fs-6 fw-bold text-uppercase">G. Keterangan intelegensi, kepribadian dan prestasi siswa</p>
+<ul class="ml-2 list-unstyled"> 
+<li>24. Intelegensi (IQ) : <?=$siswa['alamat_sklah_asl_1'];?>, berdasarkan tes pada tanggal </li>
+<li>25. Kepribadian 
+  <div><table class="table-bordered table table-hover">
+            <thead>
+            <tr>
+                    <th>No.</th>
+                    <th>Aspek yang dinilai</th> 
+                    <th>Baik</th> 
+                    <th>Cukup</th> 
+                    <th>Kurang</th> 
+                   
+            </tr>
+            </thead>
+            <tbody>
+<tr>
+  <td>1</td>
+  <td>Disiplin/ketertiban</td>
+  <td><?=$siswa['ayah'];?></td>  
+  <td><?=$siswa['ibu'];?></td>  
+</tr>
+<tr>
+  <td>2</td>
+  <td>Prakarsa/kreativitas</td> 
+  <td><?=$siswa['ttl_ayah'];?></td>
+  <td><?=$siswa['ttl_ibu'];?></td>
+  
+</tr>
+<tr>
+  <td>3</td>
+ <td>Tanggung jawab</td> 
+ <td><?=$siswa['negara_ayah'];?></td>
+ <td><?=$siswa['negara_ibu'];?></td>
+  
+</tr>
+<tr>
+  <td>4</td>
+<td>Penyesuaian diri</td> 
+<td><?=$siswa['pnddkan_akhir_ayah'];?></td>
+<td><?=$siswa['pnddkan_akhir_ibu'];?></td>
+ 
+</tr>
+<tr>
+  <td>5</td>
+<td>Kemantapan emosi</td>
+<td><?=$siswa['job_ayah'];?></td>
+<td><?=$siswa['job_ibu'];?></td>
+ 
+</tr>
+<tr>
+  <td>6</td>
+<td>Kerjasama</td> 
+<td><?=$siswa['gaji_ayah'];?></td>
+<td><?=$siswa['gaji_ibu'];?></td>
+ 
+</tr> 
+            </tbody>
+                </table></div>
+  </li>
+
+  <li>26. Keikutsertaan/Prestasi yang pernah dicapai dalam bidang :  
+<ul class="ml-4 list-unstyled"> 
+  <li>a. Kesenian : <?=$siswa['pndh_di_kls_1'];?></li>
+  <li>b. Olahraga : <?=$siswa['nmskolah_pndahan_1'];?></li>
+  <li>c. Organisasi : <?=$siswa['alamat_sklh_pndahn_1'];?></li>
+  <li>d. Pramuka : <?=$siswa['asl_sklah_before_nmrijazahnya_1'];?></li>
+  <li>e. Karya Tulis  : <?=$siswa['alamat_aslsekolah_before_1'];?></li>
+  <li>f. Lainnya : <?=$siswa['alasan_pindah_kesini_1'];?></li>
+</ul>
+</li>
+
+<li>27. Penerimaan bea siswa : 
+<ul class="ml-4 list-unstyled"> 
+  <li>Tahun : <?=$siswa['pndh_di_kls_1'];?>, dari : <?=$siswa['pndh_di_kls_1'];?></li> 
+  <li>Tahun : <?=$siswa['pndh_di_kls_1'];?>, dari : <?=$siswa['pndh_di_kls_1'];?></li> 
+  <li>Tahun : <?=$siswa['pndh_di_kls_1'];?>, dari : <?=$siswa['pndh_di_kls_1'];?></li> 
+</ul>
+</li>
+</ul>
+
+<p class="fs-6 fw-bold text-uppercase">H. Keterangan kehadiran</p>
+<ul class="ml-2 list-unstyled"> 
+<li>28. Jumlah hari kehadiran tiap semester :
+<div class="overflow-auto"><table class=" table-bordered table table-hover">
+            <thead class="text-center">
+            <tr>
+                    <th rowspan="2" colspan="2" >Kelas / semester</th>
+                    <th colspan="2">Hadir</th> 
+                    <th colspan="5">Tidak hadir karena</th> 
+                    <th rowspan="2">Jumlah hari belajar efektif</th> 
+                   
+            </tr>
+            <tr>
+                    <th >Jumlah</th>  
+                    <th >%</th>  
+                    <th >Sakit</th>  
+                    <th >Izin</th>  
+                    <th >Alpa</th>  
+                    <th >Jumlah</th>  
+                    <th >%</th>  
+                   
+            </tr>
+            <tr>
+                    <th colspan="2">1</th>
+                    <th>2</th> 
+                    <th>3</th> 
+                    <th>4</th> 
+                    <th>5</th> 
+                    <th>6</th> 
+                    <th>7</th> 
+                    <th>8</th> 
+                    <th>9</th> 
+                   
+            </tr>
+            </thead>
+            <tbody>
+<tr>
+  <td rowspan="2" >Kelas : </td> 
+  <td>Semester 1 </td> 
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td> 
+<tr>
+  <td >Semester 2 </td>  
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td> 
+</tr>
+<tr>
+  <td rowspan="2" >Kelas : </td> 
+  <td>Semester 1 </td> 
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td> 
+</tr>
+<tr>
+  <td >Semester 2 </td> 
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>  
+</tr>
+<tr>
+  <td rowspan="2" >Kelas : </td> 
+  <td>Semester 1 </td> 
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td> 
+</tr>
+<tr>
+  <td >Semester 2 </td> 
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>  
+</tr>
+
+ 
+ 
+            </tbody>
+                </table></div>
+</li>
+</ul>
+
+<p class="fs-6 fw-bold text-uppercase">I. Meninggalkan sekolah</p>
+<ul class="ml-2 list-unstyled"> 
+<li>29. Tamat Belajar : Tanggal   <?=$siswa['pndh_di_kls_1'];?>, No. Ijazah : <?=$siswa['pndh_di_kls_1'];?>
+<ul class="ml-4 list-unstyled"> 
+  <li>Melanjutkan sekolah ke : <?=$siswa['pndh_di_kls_1'];?> </li> 
+  <li>Alamat : <?=$siswa['pndh_di_kls_1'];?></li> 
+</ul>
+</li>
+
+<li>30. Pindah sekolah ke :  
+<ul class="ml-4 list-unstyled"> 
+  <li>Tanggal pindah : Tanggal : <?=$siswa['pndh_di_kls_1'];?>, dari kelas : <?=$siswa['pndh_di_kls_1'];?></li> 
+  <li>Alamat sekolah : <?=$siswa['pndh_di_kls_1'];?></li> 
+  <li>Alasan pindah : <?=$siswa['pndh_di_kls_1'];?></li> 
+</ul>
+</li>
+
+<li>31. Putus sekolah : Tanggal   <?=$siswa['pndh_di_kls_1'];?>, Alasan : <?=$siswa['pndh_di_kls_1'];?> 
+</li>
+</ul>
+
+<p class="fs-6 fw-bold text-uppercase">J. Lain-lain</p>
+<ul class="ml-2 list-unstyled"> 
+<li>32. Catatan penting selama siswa belajar di sekolah ini : 
+<ul class="ml-4 list-unstyled"> 
+  <li> <?=$siswa['pndh_di_kls_1'];?></li>  
+</li>
+</ul>
+       
+        </div>
+      </div> 
+    </div>
+    </div>
+  </section>
+        </body>
+        </html>
